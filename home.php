@@ -27,7 +27,7 @@ $posts_page_url = slz_get_posts_page_url();
 <section class="slz-blog-section">
     <div class="slz-container">
         <div class="slz-filter">
-            <a class="slz-chip active" href="<?php echo esc_url($posts_page_url); ?>"><?php esc_html_e('All Posts', 'seolizards'); ?></a>
+            <a class="slz-chip <?php echo is_category() ? '' : 'active'; ?>" href="<?php echo esc_url($posts_page_url); ?>"><?php esc_html_e('All Posts', 'seolizards'); ?></a>
             <?php foreach ($categories as $category) : ?>
                 <a class="slz-chip" href="<?php echo esc_url(get_category_link($category)); ?>"><?php echo esc_html($category->name); ?></a>
             <?php endforeach; ?>

@@ -7,7 +7,8 @@
 
 get_header();
 
-$current_category_slug = is_category() ? sanitize_key((string) get_query_var('category_name', '')) : '';
+$current_category      = is_category() ? get_queried_object() : null;
+$current_category_slug = (is_object($current_category) && isset($current_category->slug)) ? sanitize_key((string) $current_category->slug) : '';
 $categories            = get_categories(array('hide_empty' => true));
 $posts_page_url        = slz_get_posts_page_url();
 ?>

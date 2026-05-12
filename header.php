@@ -16,10 +16,10 @@
 <div class="slz-topbar">
     <div class="slz-container slz-topbar-inner">
         <div class="slz-topbar-left">
-            <span><?php esc_html_e('✉ sales@seolizards.in', 'seolizards'); ?></span>
-            <span><?php esc_html_e('☎ +91 9711864014', 'seolizards'); ?></span>
+            <a href="mailto:sales@seolizards.in"><?php esc_html_e('✉ sales@seolizards.in', 'seolizards'); ?></a>
+            <a href="tel:+919711864014"><?php esc_html_e('☎ +91 9711864014', 'seolizards'); ?></a>
         </div>
-        <div class="slz-topbar-right">
+        <div class="slz-topbar-right" role="presentation">
             <span aria-hidden="true">f</span>
             <span aria-hidden="true">t</span>
             <span aria-hidden="true">in</span>
