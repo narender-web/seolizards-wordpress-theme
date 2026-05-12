@@ -61,3 +61,18 @@ function slz_estimated_read_time($post_id = 0) {
 
     return max(1, (int) ceil($word_count / 200));
 }
+
+function slz_get_posts_page_url() {
+    $posts_page_id  = (int) get_option('page_for_posts');
+    $posts_page_url = $posts_page_id ? get_permalink($posts_page_id) : '';
+
+    if (! $posts_page_url) {
+        $posts_page_url = get_post_type_archive_link('post');
+    }
+
+    if (! $posts_page_url) {
+        $posts_page_url = home_url('/');
+    }
+
+    return $posts_page_url;
+}

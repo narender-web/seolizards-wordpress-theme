@@ -8,7 +8,7 @@
 get_header();
 
 $categories     = get_categories(array('hide_empty' => true));
-$posts_page_url = get_permalink(get_option('page_for_posts')) ?: home_url('/');
+$posts_page_url = slz_get_posts_page_url();
 ?>
 <section class="slz-hero">
     <div class="slz-container">
