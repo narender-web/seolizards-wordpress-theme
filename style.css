@@ -1,0 +1,183 @@
+/*
+Theme Name: SEO Lizards Blog Theme
+Theme URI: https://example.com/
+Author: SEO Lizards
+Description: A clean, responsive WordPress blog theme with a hero header, readable typography, and sidebar widgets.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.6
+Requires PHP: 7.4
+Text Domain: seolizards
+*/
+
+:root {
+  --sl-bg: #f5f7fb;
+  --sl-surface: #ffffff;
+  --sl-text: #1f2937;
+  --sl-muted: #6b7280;
+  --sl-accent: #0f766e;
+  --sl-border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--sl-bg);
+  color: var(--sl-text);
+  font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--sl-accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.site-header {
+  color: #fff;
+  background: linear-gradient(120deg, #0f172a, #134e4a);
+  padding: 3rem 1rem;
+}
+
+.site-header__inner,
+.site-main,
+.site-footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.site-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+}
+
+.site-description {
+  margin: 0.75rem 0 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.main-nav {
+  margin-top: 1.5rem;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav a {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  background: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+.site-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.content-area article,
+.widget-area {
+  background: var(--sl-surface);
+  border: 1px solid var(--sl-border);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.content-area article {
+  padding: 1.25rem 1.25rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.entry-title {
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+}
+
+.entry-meta {
+  margin-bottom: 0.75rem;
+  color: var(--sl-muted);
+  font-size: 0.92rem;
+}
+
+.entry-content,
+.entry-summary {
+  color: #374151;
+}
+
+.pagination {
+  margin-top: 1rem;
+}
+
+.widget-area {
+  padding: 1rem;
+  align-self: start;
+}
+
+.widget {
+  margin-bottom: 1rem;
+}
+
+.widget:last-child {
+  margin-bottom: 0;
+}
+
+.site-footer {
+  border-top: 1px solid var(--sl-border);
+  background: #fff;
+}
+
+.site-footer__inner {
+  padding: 1.5rem 1rem;
+  color: var(--sl-muted);
+}
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+@media (max-width: 900px) {
+  .site-main {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav ul {
+    gap: 0.5rem;
+  }
+}
