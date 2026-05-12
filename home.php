@@ -39,6 +39,7 @@ $posts_page_url        = get_permalink(get_option('page_for_posts')) ?: home_url
             if (have_posts()) :
                 while (have_posts()) :
                     the_post();
+                    $read_time = slz_estimated_read_time();
                     ?>
                     <article <?php post_class('slz-card'); ?>>
                         <div class="slz-card-media">
@@ -51,7 +52,7 @@ $posts_page_url        = get_permalink(get_option('page_for_posts')) ?: home_url
                         <div class="slz-card-content">
                             <div class="slz-meta">
                                 <span><?php echo esc_html(get_the_date()); ?></span>
-                                <span><?php echo esc_html(sprintf(_n('%s min read', '%s mins read', slz_estimated_read_time(), 'seolizards'), slz_estimated_read_time())); ?></span>
+                                <span><?php echo esc_html(sprintf(_n('%s min read', '%s mins read', $read_time, 'seolizards'), $read_time)); ?></span>
                             </div>
                             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                             <p><?php echo esc_html(get_the_excerpt()); ?></p>
