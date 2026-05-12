@@ -79,7 +79,7 @@ $categories            = get_categories(array('hide_empty' => true));
             <div aria-hidden="true">✉</div>
             <h3><?php esc_html_e('Get Weekly SEO & Marketing Tips', 'seolizards'); ?></h3>
             <p><?php esc_html_e('Join 10,000+ marketers getting actionable insights delivered to their inbox every week.', 'seolizards'); ?></p>
-            <div class="slz-newsletter-form">
+            <div class="slz-newsletter-action">
                 <a class="slz-cta" href="<?php echo esc_url(home_url('/contact')); ?>">
                     <?php esc_html_e('Subscribe', 'seolizards'); ?> →
                 </a>
