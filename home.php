@@ -79,11 +79,11 @@ $categories            = get_categories(array('hide_empty' => true));
             <div aria-hidden="true">✉</div>
             <h3><?php esc_html_e('Get Weekly SEO & Marketing Tips', 'seolizards'); ?></h3>
             <p><?php esc_html_e('Join 10,000+ marketers getting actionable insights delivered to their inbox every week.', 'seolizards'); ?></p>
-            <form class="slz-newsletter-form" action="#" method="post">
-                <label class="screen-reader-text" for="slz-email"><?php esc_html_e('Email address', 'seolizards'); ?></label>
-                <input id="slz-email" type="email" name="email" placeholder="<?php esc_attr_e('Enter your email address', 'seolizards'); ?>" required>
-                <button type="submit"><?php esc_html_e('Subscribe', 'seolizards'); ?> →</button>
-            </form>
+            <div class="slz-newsletter-form">
+                <a class="slz-cta" href="<?php echo esc_url(home_url('/contact')); ?>">
+                    <?php esc_html_e('Subscribe', 'seolizards'); ?> →
+                </a>
+            </div>
         </section>
     </div>
 </section>

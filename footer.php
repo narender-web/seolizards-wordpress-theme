@@ -60,7 +60,7 @@
         <div class="slz-container">
             <?php
             printf(
-                esc_html__('© %1$s SEOlizards. All rights reserved.', 'seolizards'),
+                esc_html__('© %1$s SEO Lizards. All rights reserved.', 'seolizards'),
                 esc_html(wp_date('Y'))
             );
             ?>
