@@ -1,6 +1,6 @@
 <?php
 /**
- * Blog posts index template.
+ * Archive template.
  *
  * @package seolizards
  */
@@ -18,10 +18,8 @@ $posts_page_url        = get_permalink(get_option('page_for_posts')) ?: home_url
             <span>/</span>
             <span><?php esc_html_e('Blog', 'seolizards'); ?></span>
         </div>
-        <h1>
-            <?php echo wp_kses_post(__('Digital Marketing <span class="accent">Insights &amp; Tips</span>', 'seolizards')); ?>
-        </h1>
-        <p><?php esc_html_e('Expert insights, actionable strategies, and the latest trends in SEO, PPC, social media, and digital marketing.', 'seolizards'); ?></p>
+        <h1><?php the_archive_title(); ?></h1>
+        <?php the_archive_description('<p>', '</p>'); ?>
     </div>
 </section>
 
@@ -35,11 +33,8 @@ $posts_page_url        = get_permalink(get_option('page_for_posts')) ?: home_url
         </div>
 
         <div class="slz-grid">
-            <?php
-            if (have_posts()) :
-                while (have_posts()) :
-                    the_post();
-                    ?>
+            <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
                     <article <?php post_class('slz-card'); ?>>
                         <div class="slz-card-media">
                             <?php if (has_post_thumbnail()) : ?>
@@ -58,27 +53,12 @@ $posts_page_url        = get_permalink(get_option('page_for_posts')) ?: home_url
                             <a class="slz-read-more" href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'seolizards'); ?> →</a>
                         </div>
                     </article>
-                    <?php
-                endwhile;
-            else :
-                ?>
+                <?php endwhile; ?>
+            <?php else : ?>
                 <p><?php esc_html_e('No posts found.', 'seolizards'); ?></p>
-                <?php
-            endif;
-            ?>
+            <?php endif; ?>
         </div>
         <?php the_posts_pagination(); ?>
-
-        <section class="slz-newsletter">
-            <div aria-hidden="true">✉</div>
-            <h3><?php esc_html_e('Get Weekly SEO & Marketing Tips', 'seolizards'); ?></h3>
-            <p><?php esc_html_e('Join 10,000+ marketers getting actionable insights delivered to their inbox every week.', 'seolizards'); ?></p>
-            <div class="slz-newsletter-action">
-                <a class="slz-cta" href="<?php echo esc_url(home_url('/contact')); ?>">
-                    <?php esc_html_e('Subscribe', 'seolizards'); ?> →
-                </a>
-            </div>
-        </section>
     </div>
 </section>
 
