@@ -1,6 +1,6 @@
 <?php
 /**
- * The footer for theme.
+ * The footer for the theme.
  *
  * @package seolizards
  */

@@ -7,8 +7,9 @@
 
 get_header();
 
-$current_category_slug = isset($_GET['category']) ? sanitize_key(wp_unslash($_GET['category'])) : '';
+$current_category_slug = sanitize_key((string) get_query_var('category_name', ''));
 $categories            = get_categories(array('hide_empty' => true));
+$posts_page_url        = get_permalink(get_option('page_for_posts')) ?: home_url('/');
 ?>
 <section class="slz-hero">
     <div class="slz-container">
@@ -27,9 +28,9 @@ $categories            = get_categories(array('hide_empty' => true));
 <section class="slz-blog-section">
     <div class="slz-container">
         <div class="slz-filter">
-            <a class="slz-chip <?php echo '' === $current_category_slug ? 'active' : ''; ?>" href="<?php echo esc_url(get_permalink(get_option('page_for_posts')) ?: home_url('/')); ?>"><?php esc_html_e('All Posts', 'seolizards'); ?></a>
+            <a class="slz-chip <?php echo '' === $current_category_slug ? 'active' : ''; ?>" href="<?php echo esc_url($posts_page_url); ?>"><?php esc_html_e('All Posts', 'seolizards'); ?></a>
             <?php foreach ($categories as $category) : ?>
-                <a class="slz-chip <?php echo $current_category_slug === $category->slug ? 'active' : ''; ?>" href="<?php echo esc_url(add_query_arg('category', $category->slug, get_permalink(get_option('page_for_posts')) ?: home_url('/'))); ?>"><?php echo esc_html($category->name); ?></a>
+                <a class="slz-chip <?php echo $current_category_slug === $category->slug ? 'active' : ''; ?>" href="<?php echo esc_url(add_query_arg('category_name', $category->slug, $posts_page_url)); ?>"><?php echo esc_html($category->name); ?></a>
             <?php endforeach; ?>
         </div>
 

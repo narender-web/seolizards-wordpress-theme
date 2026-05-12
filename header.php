@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for theme.
+ * The header for the theme.
  *
  * @package seolizards
  */
